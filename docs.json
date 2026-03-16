@@ -3,90 +3,56 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#C9B6E4",
+    "light": "#C9B6E4",
+    "dark": "#C9B6E4"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/favicon-32x32.png",
   "navigation": {
-    "tabs": [
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Main Site",
+          "icon": "book-open-cover",
+          "color": {
+            "light": "#C9B6E4",
+            "dark": "#C9B6E4"
+          },
+          "href": "https://lumiraranking.co.uk/"
+        }
+      ]
+    },
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Guides",
+        "pages": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
+            "group": "Overview",
+            "pages": []
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "group": "Documentation",
+        "pages": [
+          "Welcome to Lumira",
+          "Rules & Regulations"
+        ]
+      },
+      {
+        "group": "Portal Documentation",
+        "pages": [
           {
-            "group": "API documentation",
+            "group": "Setup",
             "pages": [
               "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "logo": "<span style=\"background: linear-gradient(135deg,#F6B5C5,#C9B6E4,#9ED1E7,#8FD6CF); -webkit-background-clip: text; color: transparent; font-weight: bold;\">Lumira Ranking</span>",
   "navbar": {
     "links": [
       {
@@ -96,21 +62,21 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Main Page",
+      "href": "https://lumiraranking.co.uk"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
@@ -118,5 +84,9 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     }
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
   }
 }
