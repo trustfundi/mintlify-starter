@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "maple",
+  "name": "LumiraMint Starter Kit",
   "colors": {
-    "primary": "#C9B6E4",
-    "light": "#C9B6E4",
-    "dark": "#C9B6E4"
+    "primary": "#c397ff",
+    "light": "#c397ff",
+    "dark": "#a667ff"
   },
   "favicon": "/images/favicon-32x32.png",
   "navigation": {
@@ -13,7 +13,7 @@
       "anchors": [
         {
           "anchor": "Main Site",
-          "icon": "book-open-cover",
+          "icon": "newspaper",
           "color": {
             "light": "#C9B6E4",
             "dark": "#C9B6E4"
@@ -22,26 +22,18 @@
         }
       ]
     },
-    "groups": [
+    "tabs": [
       {
-        "group": "Guides",
+        "tab": "Lumira Documentation",
+        "icon": "aperture",
         "pages": [
           {
             "group": "Overview",
-            "pages": []
-          }
-        ]
-      },
-      {
-        "group": "Documentation",
-        "pages": [
-          "Welcome to Lumira",
-          "Rules & Regulations"
-        ]
-      },
-      {
-        "group": "Portal Documentation",
-        "pages": [
+            "pages": [
+              "Welcome to Lumira-copied-1",
+              "rules-and-regulation"
+            ]
+          },
           {
             "group": "Setup",
             "pages": [
@@ -88,5 +80,11 @@
   "appearance": {
     "default": "dark",
     "strict": true
+  },
+  "background": {
+    "color": {
+      "dark": "#0c0b0c"
+    },
+    "decoration": "grid"
   }
 }
