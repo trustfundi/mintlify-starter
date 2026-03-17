@@ -37,7 +37,7 @@
           {
             "group": "Setup",
             "pages": [
-              "api-reference/introduction"
+              "initial-setup"
             ]
           }
         ]
