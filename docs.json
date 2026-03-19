@@ -24,8 +24,8 @@
     },
     "tabs": [
       {
-        "tab": "Lumira Documentation",
-        "icon": "aperture",
+        "tab": "Home",
+        "icon": "house-chimney-window",
         "pages": [
           {
             "group": "Overview",
@@ -35,7 +35,38 @@
             ]
           },
           {
-            "group": "Setup",
+            "group": "Brands & Partners",
+            "icon": "handshake-simple",
+            "pages": [
+              "become-a-label",
+              "benefits"
+            ]
+          },
+          {
+            "group": "Plans",
+            "icon": "credit-card",
+            "pages": [
+              "core",
+              "plus",
+              "ultimate"
+            ]
+          },
+          {
+            "group": "Careers",
+            "icon": "suitcase",
+            "pages": [
+              "public-relations-team"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Portal",
+        "icon": "book-blank",
+        "pages": [
+          {
+            "group": "Getting Started",
+            "icon": "star",
             "pages": [
               "initial-setup"
             ]
