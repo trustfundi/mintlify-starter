@@ -1,0 +1,245 @@
+---
+title: "Demote Plugin"
+---
+
+### **Demote Plugin**
+
+Promote users **down a rank** in-game using **Lumira’s API** alongside Basic Admin Essentials.
+
+---
+
+## **What this plugin does**
+
+- **Demotes** a player to their previous Roblox group rank
+- Sends **demotion** requests through the Lumira API
+- Supports **demoting**:
+  - A single user **(by username)**
+  - Multiple users **_(e.g. trustfundi,abthecooldood,Twitch\_OliPlayz)_**
+
+---
+
+## **1) Open Roblox Studio**
+
+- Launch **Roblox Studio**
+- Open the place where **Basic Admin Essentials** is installed
+
+---
+
+## **2) Insert the Plugin ModuleScript**
+
+1. In the **Explorer**, locate:\
+   `BasicAdminEssentials → Plugins`
+2. Create a **ModuleScript** inside the Plugins folder
+3. Rename it to:
+   ```text
+   LumiraPromote
+   ```
+4. Delete all existing code inside the **ModuleScript**
+5. Paste your Lumira **demote plugin code**
+
+> Anything highlighted in green is where you must input the required information.
+
+---
+
+### **Plugin Code**
+
+```text
+--[[
+───────────────────────────────────────────────────────────────
+📦 Basic Admin Essentials - Lumira Demote Command
+───────────────────────────────────────────────────────────────
+	Author: Lumira Ranking
+	Version: 1.0
+	
+	Description:
+	This plugin allows in-game admin users to demote players
+	using the Lumira Ranking API. When executed, it sends a POST
+	request to the external API with the player's UserId and GroupId.
+	
+───────────────────────────────────────────────────────────────
+⚙️ Setup Guide
+───────────────────────────────────────────────────────────────
+	
+	1. Invite Lumira bot to your Discord Server.
+	2. Run "/setup_community" and complete the setup process.
+	3. Locate the Lumira discord server and run the commands mentioned below:
+	   (Example:/generatekey)
+	4. Copy the generated API key.
+	5. Paste it into this script:
+	
+	   local API_KEY = 'PASTE_KEY_HERE'
+	
+	6. Insert your Roblox Group ID where indicated in the script.
+	
+	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	
+	Setup Instructions:
+	- Ensure HttpService is enabled in your Roblox game settings.
+	- Make sure the bot has permissions configured correctly.
+	
+	Command Usage:
+	:demote <user>
+	
+	Notes:
+	- Requires proper permissions (pluginLevel = 1).
+	- Sends a notification to the promoted player.
+	- Uses external API, so failures may occur if the service is down.
+]]
+
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+
+local API_KEY = 'API_KEY'
+local API_URL = 'https://api.lumiraranking.co.uk/v1/demote'
+
+local function demotePlayer(player : Player)
+	local Payload = {
+		userId = player.UserId,
+		groupId  = --[GROUPID]--
+	}
+	
+	--─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+	-- ⚠️ DO NOT TOUCH ANYTHING BELOW THIS MESSAGE IF YOU DONT KNOW WHAT YOU ARE DOING. WE CANNOT HELP IF THIS CODE HAS BEEN CHANGED.
+	--─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+	local success, response = pcall(function()
+		return HttpService:RequestAsync({
+			Url = API_URL,
+			Method = 'POST',
+			Headers = {
+				['Content-Type'] = 'application/json',
+				['Authorization'] = "Bearer " .. API_KEY
+			},
+			Body = HttpService:JSONEncode(Payload)
+		})
+	end)
+
+	if not success then
+		warn("[❌] HTTPS ERROR: Request failed to load: " .. response)
+		return false
+	end
+
+	if response.Success then
+		print("[✅] RANK SUCCESS: Successfully ranked: ", response.Body)
+		return true
+	else
+		warn("[❌] API ERROR:", response.StatusCode, response.Body)
+		return false
+	end
+end
+
+local Plugin = function(...)
+	local Data = {...}
+
+	local remoteEvent = Data[1][1]
+	local remoteFunction = Data[1][2]
+	local returnPermissions = Data[1][3]
+	local Commands = Data[1][4]
+	local Prefix = Data[1][5]
+	local actionPrefix = Data[1][6]
+	local returnPlayers = Data[1][7]
+	local cleanData = Data[1][8] 
+
+	local pluginName = 'demote'
+	local pluginPrefix = Prefix
+	local pluginLevel = 1
+	local pluginUsage = "<user>" 
+	local pluginDescription = "Lumira • Demotes a specific user"
+
+	local function pluginFunction(Args) 
+		local Player = Args[1]
+		if Args[3] then
+			local Victims = returnPlayers(Player, Args[3]) if not Victims then return end
+			local combinedVictims = ''
+			for a,b in pairs(Victims) do
+				if combinedVictims == '' then
+					combinedVictims = b.Name
+				else
+					combinedVictims = combinedVictims..', '..b.Name
+				end
+			end
+			for a,b in next,Victims do
+				print(b.Name, b.UserId)
+				demotePlayer(b)
+				remoteEvent:FireClient(b,'Hint','Ranking Notification','Unfortuantely you have been demoted by an in game administrator')
+			end
+		end
+	end
+
+	-- Return Everything to the MainModule --
+	local descToReturn
+	if pluginUsage ~= "" then
+		descToReturn = pluginPrefix..pluginName..' '..pluginUsage..'\n'..pluginDescription
+	else
+		descToReturn = pluginPrefix..pluginName..'\n'..pluginDescription
+	end
+
+	return pluginName,pluginFunction,pluginLevel,pluginPrefix,{pluginName,pluginUsage,pluginDescription}
+end
+
+return Plugin
+```
+
+---
+
+## **3) Configure the Plugin**
+
+### **Required**
+
+- `API_KEY` → your Lumira API key
+- `GROUP_ID` → your Roblox group ID
+
+---
+
+## **4) Get your API Key**
+
+- Join Lumira's server
+- Generate your API key using the bot command _(e.g. _`/apikey create`_)_
+- Copy your **API** key
+- Paste it into:
+
+```text
+local API_KEY = 'API_KEY'
+```
+
+---
+
+## **5) Ensure Roblox Settings Are Correct**
+
+- Go to **Game Settings → Security**\\
+- ✅ Enable **Allow HTTP Requests**\\
+
+Also make sure:
+
+- Your Roblox Group ID is correct
+- Your **API Key** is valid
+- The group has a proper rank structure
+- Your system has permission to demote users
+
+---
+
+## **6) How to Use the Command (In-Game)**
+
+### **Demote One Player**
+
+Example:
+
+```text
+:demote username
+```
+
+> The command name depends on the **ModuleScript** name.
+
+---
+
+## **Troubleshooting**
+
+### **“API error” / Demotions failing**
+
+- Ensure **HTTP Requests** are enabled
+- Verify your **API key** is correct
+- Make sure **Lumira services** are online
+- Confirm your **group ID** is valid
+- Ensure your system has permission to change ranks
+
+---

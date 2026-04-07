@@ -1,0 +1,93 @@
+---
+title: "Introduction"
+---
+
+Welcome to the Lumira's API Documentation! This will provide all the information you need to integrate our best features into your games and services using our **API**.
+
+---
+
+<Danger>
+  This Feature is Still Under **BETA**. Use with your own risk.
+</Danger>
+
+---
+
+Lumira **API** allows you to programmatically perform actions such as:
+
+- Automating **rank promotions** within your **Roblox group**
+- Managing **users** and rank **progression** systems
+- Sending **in-game** or **external** notifications **(e.g., logs)**
+- Securely **authenticating** and **managing** API access
+
+<Warning>
+  **Important:** The **API** is only available with a valid API key.
+</Warning>
+
+---
+
+## **Base URL**
+
+All API requests are made to:
+
+```text
+https://api.lumiraranking.co.uk/
+```
+
+- All requests must use **HTTPS**
+- Requests must include proper authentication via your **API key**
+
+---
+
+## **Authentication**
+
+All endpoints require an **API Key** to access.\
+Your API key acts as a secure token that identifies and authorizes your system.
+
+---
+
+### **How to get your API key**
+
+1. Join **Lumira** Discord Server
+2. Generate a key using the bot command\
+   _(example: `/apikey create` — may vary depending on your setup)_
+3. Copy your API key and store it securely
+
+<Warning>
+  🔐 **Important:** Treat your API key like a password. If it is exposed, regenerate it immediately.
+</Warning>
+
+---
+
+## **Requirements**
+
+Before using the **Lumira API**, ensure you have:
+
+- A valid Lumira **API** key
+- Lumira must be fully setup in your discord server.
+- Proper permissions to execute ranking actions
+- **HTTPs Services** enabled in your Roblox game
+
+---
+
+## **Rate Limits & Best Practices**
+
+To ensure stability and avoid restrictions:
+
+- Avoid sending **excessive requests** in a short time
+- Batch actions when possible **(e.g., ranking multiple players)**
+- Always check **API responses** before continuing logic
+
+---
+
+The API returns standard **HTTP response codes**:
+
+| Code | Meaning |
+| :-- | :-- |
+| **200** | Success |
+| **400** | Bad Request |
+| **401** | Unauthorized (invalid API key) |
+| **403** | Forbidden (missing permissions or invalid setup) |
+| **404** | Not Found |
+| **500** | Server Error (service-side issue report to us immediately) |
+
+Each response may also include additional details in the body to help with debugging.

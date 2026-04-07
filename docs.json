@@ -72,6 +72,27 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "API",
+        "icon": "rectangle-terminal",
+        "groups": [
+          {
+            "group": "Overview",
+            "icon": "terminal",
+            "pages": [
+              "introduction"
+            ]
+          },
+          {
+            "group": "Basic Admin Integration",
+            "icon": "clipboard-check",
+            "pages": [
+              "promote-plugin",
+              "demote-plugin"
+            ]
+          }
+        ]
       }
     ]
   },
