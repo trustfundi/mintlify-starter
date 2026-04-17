@@ -1,22 +1,17 @@
 ---
-title: "Promote Plugin"
+title: "SetRank Plugin"
 ---
 
-Promote users in-game using **Lumira’s API** alongside **Basic Admin Essentials**.
-
-<Warning>
-  Any **Rank Abuse,** coming internally from your end **does not make us liable. Read our terms at lumiraranking.co.uk/terms & /privacy.**
-</Warning>
+Select a users **rank** and change it to a desired **rank** in-game using **Lumira’s API** alongside Basic Admin Essentials.
 
 ---
 
 ## **What this plugin does**
 
-- Promotes a player to their next Roblox group rank
-- Sends promotion requests through the Lumira API
-- Supports promoting:
-  - A single user (by username)
-  - Multiple users **(ex: trustfundi, abthecooldood, Twitch\_OliPlayz)**
+- **Select** a players rank and change it to a desired rank
+- Sends **setrank** requests through the Lumira API
+- Supports **demoting**:
+  - A single user **(by username)**
 
 ---
 
@@ -38,14 +33,6 @@ Lumira Ranking
 
 ---
 
-## **Where do I get the Plugin?**
-
-You can download the plugin [here](https://create.roblox.com/store/asset/87756804815572/InGame-Lumira-Ranking).
-
-- Once you download the plugin, you can now continue on setting up the product.
-
----
-
 ## **1) Open Roblox Studio**
 
 - Launch **Roblox Studio**
@@ -53,11 +40,11 @@ You can download the plugin [here](https://create.roblox.com/store/asset/8775680
 
 ---
 
-## **2) Insert / Edit the Promote Plugin Script**
+## **2) Insert / Edit the SetRank Plugin Script**
 
 1. In the **Explorer**, locate:\
    `Lumira Ranking → Plugin Scripts`
-2. Select `Lumira Promote` 
+2. Select `Lumira SetRank`
 3. Open the script
 
 ---
@@ -77,7 +64,7 @@ At the top of the script, replace the configuration values:
 
 1. Join your the **Lumira server**
 2. Generate your API key using the bot command\
-   _(example: `/apikey create` )_
+   _(example:_ `/apikey create `_)_
 3. Copy your API key
 4. Go to `Lumira Ranking` in Replicated Storage
 5. Paste it into:
@@ -105,14 +92,14 @@ Also make sure:
 
 ### **4) How to Use the Command (In-Game)**
 
-### **Promote One Player**
+### **Demote One Player**
 
 Use your Basic Admin prefix (commonly `:`)
 
 **Example:**
 
 ```text
-:promote username
+:demote username
 ```
 
 > The command name is based on the **Script** name.\
@@ -122,12 +109,12 @@ Use your Basic Admin prefix (commonly `:`)
 
 ## **Troubleshooting**
 
-### **“API error” / Promotions failing**
+### **“API error” / Setrank failing**
 
 - Ensure **HTTP Requests** are enabled
 - Verify your **API** key is correct
 - Make sure **Lumira** services are reachable
 - Confirm your **group ID** is valid and properly configured
-- Check that your system has **permission to promote users**
+- Check that your system has **permission to demote users**
 
 ---

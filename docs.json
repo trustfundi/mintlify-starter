@@ -47,8 +47,7 @@
             "icon": "credit-card",
             "pages": [
               "core",
-              "plus",
-              "ultimate"
+              "plus"
             ]
           },
           {
@@ -56,19 +55,6 @@
             "icon": "suitcase",
             "pages": [
               "public-relations-team"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Portal",
-        "icon": "book-blank",
-        "pages": [
-          {
-            "group": "Getting Started",
-            "icon": "star",
-            "pages": [
-              "initial-setup"
             ]
           }
         ]
@@ -89,7 +75,8 @@
             "icon": "clipboard-check",
             "pages": [
               "promote-plugin",
-              "demote-plugin"
+              "demote-plugin",
+              "set-rank-plugin"
             ]
           }
         ]

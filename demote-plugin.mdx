@@ -2,7 +2,7 @@
 title: "Demote Plugin"
 ---
 
-Promote users **down a rank** in-game using **Lumira’s API** alongside Basic Admin Essentials.
+Demote users **down a rank** in-game using **Lumira’s API** alongside Basic Admin Essentials.
 
 ---
 
@@ -16,6 +16,24 @@ Promote users **down a rank** in-game using **Lumira’s API** alongside Basic A
 
 ---
 
+### Folder Structure
+
+Your Roblox Studio hierarchy **must match this structure**:
+
+```text
+Lumira Ranking
+│
+├── Plugin Scripts
+│   ├── Lumira Demote
+│   ├── Lumira Promote
+│   └── Lumira SetRank
+│
+├── ReplicatedStorage
+│   └── LumiraRanking
+```
+
+---
+
 ## **1) Open Roblox Studio**
 
 - Launch **Roblox Studio**
@@ -23,77 +41,70 @@ Promote users **down a rank** in-game using **Lumira’s API** alongside Basic A
 
 ---
 
-## **2) Insert the Plugin ModuleScript**
+## **2) Insert / Edit the Demote Plugin Script**
 
 1. In the **Explorer**, locate:\
-   `BasicAdminEssentials → Plugins`
-2. Create a **ModuleScript** inside the Plugins folder
-3. Rename it to:
-   ```text
-   LumiraPromote
-   ```
-4. Delete all existing code inside the **ModuleScript**
-5. Paste your Lumira **demote plugin code**
-
-> Anything highlighted in green is where you must input the required information.
+   `Lumira Ranking → Plugin Scripts`
+2. Select `Lumira Demote`
+3. Open the script
 
 ---
 
-### **Plugin Code**
+## **1) Configure the Plugin**
 
-```text
-COMING SOON
-```
-
----
-
-## **3) Configure the Plugin**
+At the top of the script, replace the configuration values:
 
 ### **Required**
 
-- `API_KEY` → your Lumira API key
-- `GROUP_ID` → your Roblox group ID
+- `ApiKey` → your **Lumira API key**
+- `GroupId` → your **Roblox group ID**
 
 ---
 
-## **4) Get your API Key**
+## **2) Get your API Key**
 
-- Join Lumira's server
-- Generate your API key using the bot command _(e.g. `/apikey create`)_
-- Copy your **API** key
-- Paste it into:
-
-```text
-local API_KEY = 'API_KEY'
-```
+1. Join your the **Lumira server**
+2. Generate your API key using the bot command\
+   _(example:_ `/apikey create `_)_
+3. Copy your API key
+4. Go to `Lumira Ranking` in Replicated Storage
+5. Paste it into:
+   ```text
+   ApiKey  = 'YOUR_API_KEY'
+   ```
 
 ---
 
-## **5) Ensure Roblox Settings Are Correct**
+## **3) Ensure Roblox Settings Are Correct**
 
-- Go to **Game Settings → Security**\\
-- ✅ Enable **Allow HTTP Requests**\\
+To allow API requests:
+
+- Go to **Game Settings → Security**
+- ✅ Enable **Allow HTTP Requests**
 
 Also make sure:
 
-- Your Roblox Group ID is correct
-- Your **API Key** is valid
+- Your **Roblox Group ID** is correct
+- Your **API Key** is correct
 - The group has a proper rank structure
-- Your system has permission to demote users
+- Your system has permission to promote users
 
 ---
 
-## **6) How to Use the Command (In-Game)**
+### **4) How to Use the Command (In-Game)**
 
 ### **Demote One Player**
 
-Example:
+Use your Basic Admin prefix (commonly `:`)
+
+**Example:**
 
 ```text
 :demote username
 ```
 
-> The command name depends on the **ModuleScript** name.
+> The command name is based on the **Script** name.\
+> If you rename it, the command changes accordingly.
 
 ---
 
@@ -102,9 +113,9 @@ Example:
 ### **“API error” / Demotions failing**
 
 - Ensure **HTTP Requests** are enabled
-- Verify your **API key** is correct
-- Make sure **Lumira services** are online
-- Confirm your **group ID** is valid
-- Ensure your system has permission to change ranks
+- Verify your **API** key is correct
+- Make sure **Lumira** services are reachable
+- Confirm your **group ID** is valid and properly configured
+- Check that your system has **permission to demote users**
 
 ---
