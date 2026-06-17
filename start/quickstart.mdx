@@ -1,0 +1,53 @@
+---
+title: "Quickstart"
+description: "Set up a Lumira v2 workspace in the right order."
+---
+
+## Setup order
+
+Use this flow for a new Lumira workspace.
+
+<Steps>
+  <Step title="Log in with Discord">
+    Open the Lumira portal and sign in with Discord. Lumira uses your Discord
+    account to determine workspace access and staff permissions.
+  </Step>
+  <Step title="Create a workspace">
+    Choose the Discord server you want Lumira to manage. The creator is stored
+    as the workspace owner.
+  </Step>
+  <Step title="Invite the Lumira bot">
+    Complete the Discord invite step so Lumira can read roles, post embeds,
+    handle commands, and manage configured automation.
+  </Step>
+  <Step title="Connect Roblox ranking">
+    In workspace settings, link the Roblox account Lumira should use for ranking.
+    This uses Roblox OAuth with `group:read` and `group:write` access.
+  </Step>
+  <Step title="Configure core operations">
+    Set verification, verified role, rank binds, session channel, moderation
+    logs, and workspace access roles.
+  </Step>
+</Steps>
+
+<Warning>
+  Lumira v2 does not use `.ROBLOSECURITY` cookies for ranking. If a page or user
+  asks for a Roblox cookie, stop and use the OAuth ranking setup instead.
+</Warning>
+
+## First features to enable
+
+<CardGroup cols={2}>
+  <Card title="Verification" icon="badge-check" href="/workspace/verification">
+    Link Discord members to Roblox identities.
+  </Card>
+  <Card title="Role binds" icon="link" href="/workspace/role-binds">
+    Sync Discord roles from Roblox ranks.
+  </Card>
+  <Card title="Sessions" icon="radio" href="/workspace/sessions">
+    Host sessions and track attendance.
+  </Card>
+  <Card title="Support PIN" icon="life-ring" href="/support/support-pin">
+    Prepare support context safely.
+  </Card>
+</CardGroup>

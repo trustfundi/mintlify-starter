@@ -1,60 +1,124 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "Lumira",
+  "name": "Lumira Docs",
   "colors": {
-    "primary": "#c397ff",
-    "light": "#c397ff",
-    "dark": "#a667ff"
+    "primary": "#f9a8d4",
+    "light": "#c4b5fd",
+    "dark": "#f9a8d4"
   },
   "favicon": "/images/favicon-32x32.png",
+  "logo": {
+    "light": "/images/LumiraRankingNoBG.png",
+    "dark": "/images/LumiraRankingNoBG.png"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "background": {
+    "color": {
+      "dark": "#08050d",
+      "light": "#f8f5ff"
+    },
+    "decoration": "grid"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Portal",
+        "href": "https://canary-portal.lumiraranking.co.uk/login"
+      },
+      {
+        "label": "Support",
+        "href": "/support/support-pin"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Lumira",
+      "href": "https://canary-portal.lumiraranking.co.uk/login"
+    }
+  },
   "navigation": {
     "global": {
       "anchors": [
         {
-          "anchor": "Main Site",
-          "icon": "newspaper",
+          "anchor": "Website",
+          "href": "https://lumiraranking.co.uk",
+          "icon": "globe",
           "color": {
-            "light": "#C9B6E4",
-            "dark": "#C9B6E4"
-          },
-          "href": "https://lumiraranking.co.uk/"
+            "light": "#f9a8d4",
+            "dark": "#f9a8d4"
+          }
+        },
+        {
+          "anchor": "Portal",
+          "href": "https://canary-portal.lumiraranking.co.uk/login",
+          "icon": "grid-2",
+          "color": {
+            "light": "#c4b5fd",
+            "dark": "#c4b5fd"
+          }
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://discord.gg/lumiraranking",
+          "icon": "message-circle",
+          "color": {
+            "light": "#6ee7b7",
+            "dark": "#6ee7b7"
+          }
         }
       ]
     },
     "tabs": [
       {
-        "tab": "Home",
-        "icon": "house-chimney-window",
-        "pages": [
+        "tab": "Start",
+        "icon": "sparkles",
+        "groups": [
           {
             "group": "Overview",
             "pages": [
-              "welcome-to-lumira",
-              "rules-and-regulation"
+              "index",
+              "start/quickstart",
+              "start/concepts",
+              "start/plans"
             ]
           },
           {
-            "group": "Label & Partners",
-            "icon": "handshake-simple",
+            "group": "Workspace setup",
             "pages": [
-              "become-a-label",
-              "benefits"
+              "setup/create-workspace",
+              "setup/connect-discord",
+              "setup/connect-roblox",
+              "setup/support-pin"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Workspace",
+        "icon": "grid-2",
+        "groups": [
+          {
+            "group": "Core operations",
+            "pages": [
+              "workspace/verification",
+              "workspace/verified-users",
+              "workspace/role-binds",
+              "workspace/ranking",
+              "workspace/sessions"
             ]
           },
           {
-            "group": "Plans",
-            "icon": "credit-card",
+            "group": "Pro operations",
             "pages": [
-              "core",
-              "plus"
-            ]
-          },
-          {
-            "group": "Careers",
-            "icon": "suitcase",
-            "pages": [
-              "public-relations-team"
+              "workspace/loa",
+              "workspace/modmail",
+              "workspace/embeds",
+              "workspace/forms",
+              "workspace/trust-network"
             ]
           }
         ]
@@ -64,38 +128,41 @@
         "icon": "rectangle-terminal",
         "groups": [
           {
-            "group": "Overview",
-            "icon": "terminal",
+            "group": "API access",
             "pages": [
-              "introduction"
+              "api/introduction",
+              "api/authentication",
+              "api/ranking-actions",
+              "api/rate-limits",
+              "api/errors"
             ]
           },
           {
-            "group": "Basic Admin Integration",
-            "icon": "clipboard-check",
+            "group": "Roblox plugin",
             "pages": [
-              "promote-plugin",
-              "demote-plugin",
-              "set-rank-plugin"
+              "plugins/basic-admin",
+              "plugins/promote",
+              "plugins/demote",
+              "plugins/set-rank"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Policies",
+        "icon": "shield-check",
+        "groups": [
+          {
+            "group": "Support and safety",
+            "pages": [
+              "support/support-pin",
+              "policies/community-rules",
+              "policies/trust-and-untrusted"
             ]
           }
         ]
       }
     ]
-  },
-  "logo": "<span style=\"background: linear-gradient(135deg,#F6B5C5,#C9B6E4,#9ED1E7,#8FD6CF); -webkit-background-clip: text; color: transparent; font-weight: bold;\">Lumira Ranking</span>",
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Main Page",
-      "href": "https://lumiraranking.co.uk"
-    }
   },
   "contextual": {
     "options": [
@@ -104,26 +171,28 @@
       "chatgpt",
       "claude",
       "perplexity",
-      "mcp",
       "cursor",
       "vscode"
     ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  },
-  "appearance": {
-    "default": "dark",
-    "strict": true
-  },
-  "background": {
-    "color": {
-      "dark": "#0c0b0c"
+      "github": "https://github.com/trustfundi",
+      "x": "https://x.com/LumiraRanking"
     },
-    "decoration": "grid"
+    "links": [
+      {
+        "label": "Terms",
+        "href": "https://lumiraranking.co.uk/terms"
+      },
+      {
+        "label": "Privacy",
+        "href": "https://lumiraranking.co.uk/privacy"
+      },
+      {
+        "label": "Support",
+        "href": "/support/support-pin"
+      }
+    ]
   }
 }

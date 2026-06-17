@@ -1,0 +1,35 @@
+---
+title: "Errors"
+description: "Handle API errors from Lumira."
+---
+
+## Response format
+
+Lumira errors usually include:
+
+```json
+{
+  "success": false,
+  "error": "Selected rank was not found"
+}
+```
+
+## Common status codes
+
+| Code | Meaning |
+| --- | --- |
+| `400` | Bad request or invalid payload |
+| `401` | Missing or invalid authentication |
+| `403` | Permission or plan restriction |
+| `404` | Workspace or resource not found |
+| `429` | Rate limit reached |
+| `500` | Service-side failure |
+
+## What to include in support requests
+
+- Endpoint
+- Workspace ID
+- Request body without secrets
+- Response status
+- Response body
+- Support PIN

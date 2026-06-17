@@ -1,33 +1,34 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# Lumira documentation project
 
-# Documentation project instructions
+This is the Mintlify documentation site for Lumira.
 
-## About this project
+## Framework
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Run `mint dev` to preview locally
-- Run `mint broken-links` to check links
+- Configuration lives in `docs.json`.
+- Pages are MDX files with YAML frontmatter.
+- Custom Lumira styling lives in `style.css`.
+- Use `mint dev` to preview locally.
+- Use `mint broken-links` to check navigation and links when the Mintlify CLI is available.
 
-## Terminology
+## Product terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- Use **workspace**, not project.
+- Use **member** for people inside Discord/Roblox communities.
+- Use **ranking account** for the Roblox account connected through OAuth.
+- Use **Support PIN** for support verification. Do not tell users to send private credentials.
+- Use **Core** and **Pro** for public plan language.
 
-## Style preferences
+## Content rules
 
-{/* Add any project-specific style rules below */}
+- Lumira v2 ranking uses Roblox OAuth. Do not document `.ROBLOSECURITY` setup as an accepted ranking method.
+- Do not document internal-only staff portal implementation details.
+- Do not publish secrets, tokens, API keys, bot tokens, cookies, client secrets, or database details.
+- Support requests should go through Discord and include a Support PIN when requested.
 
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+## Writing style
 
-## Content boundaries
-
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Use active voice and second person.
+- Keep sentences short.
+- Use sentence case for headings.
+- Bold UI labels, for example: Click **Settings**.
+- Use code formatting for commands, file paths, scopes, endpoints, and IDs.

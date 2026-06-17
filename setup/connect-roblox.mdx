@@ -1,0 +1,31 @@
+---
+title: "Connect Roblox ranking"
+description: "Link the Roblox account Lumira should use for rank actions."
+---
+
+## How ranking works
+
+Lumira v2 uses Roblox OAuth instead of Roblox cookies. The ranking account grants
+Lumira permission to read group data and write rank updates for lower-ranked group
+members that the account can manage.
+
+## Link the account
+
+1. Open your workspace.
+2. Go to **Settings**.
+3. Open **Ranking account**.
+4. Select **Link account**.
+5. Approve Roblox OAuth permissions.
+6. Return to Lumira and confirm the card says **Ranking enabled**.
+
+## Required Roblox OAuth scopes
+
+- `openid`
+- `profile`
+- `group:read`
+- `group:write`
+
+<Warning>
+  The ranking account must have enough Roblox group permissions to rank the
+  target members. OAuth access does not bypass Roblox group hierarchy.
+</Warning>

@@ -1,0 +1,29 @@
+---
+title: "Authentication"
+description: "Authenticate requests to Lumira API endpoints."
+---
+
+## API keys
+
+API keys are created and managed inside the Lumira workspace. Treat them like
+secrets.
+
+## Request headers
+
+Most API integrations should send an API key using the configured authorization
+method for the endpoint.
+
+```http
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+```
+
+Some internal or legacy endpoints may use workspace-specific headers. Prefer the
+documented API-key flow for new integrations.
+
+## Security rules
+
+- Never expose API keys to clients.
+- Rotate keys if they are leaked.
+- Use separate keys for separate systems where possible.
+- Keep Roblox ranking connected through OAuth, not cookies.

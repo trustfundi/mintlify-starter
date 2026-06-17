@@ -1,0 +1,32 @@
+---
+title: "Ranking actions"
+description: "Promote, demote and set ranks through the Lumira API."
+---
+
+## Supported actions
+
+- `promote`
+- `demote`
+- `setrank`
+
+## Example request
+
+```bash
+curl -X POST "https://canary-api.lumiraranking.co.uk/v0/workspaces/{guildId}/rank-action" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "action": "setrank",
+    "targetRobloxId": "1527978588",
+    "roleId": "254",
+    "reason": "Training completion"
+  }'
+```
+
+## Common failure reasons
+
+- Selected rank was not found.
+- Ranking account is not linked.
+- Ranking account lacks group write permission.
+- Target user is not in the group.
+- The rank is above the ranking account's permission.

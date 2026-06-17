@@ -1,0 +1,29 @@
+---
+title: "Verification"
+description: "Let members link Discord accounts to Roblox accounts."
+---
+
+## What verification does
+
+Verification connects a Discord user to a Roblox account. Lumira stores this link
+so members do not need to reverify after a bot restart or service restart.
+
+## Setup checklist
+
+- Set a verification channel.
+- Configure the verified Discord role.
+- Publish the verification message.
+- Test the flow with a non-admin account.
+
+## Member flow
+
+1. The member opens the verification link or command.
+2. They authenticate with Discord.
+3. They continue to Roblox OAuth.
+4. Lumira stores the verified identity.
+5. Lumira applies the verified role if configured.
+
+## Verification risk
+
+Pro workspaces can enable verification risk checks for new accounts, blacklist
+matches, and potential ban evasion signals.

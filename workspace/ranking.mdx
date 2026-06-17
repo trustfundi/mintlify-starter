@@ -1,0 +1,32 @@
+---
+title: "Ranking"
+description: "Promote, demote and set Roblox ranks through Lumira."
+---
+
+## Ranking actions
+
+Lumira supports:
+
+- Promote
+- Demote
+- Set rank
+
+All rank actions must go through Lumira's ranking service and the connected
+Roblox OAuth ranking account.
+
+## Requirements
+
+- Ranking account linked
+- Ranking enabled in workspace settings
+- Target user is in the Roblox group
+- Ranking account can manage the target rank
+
+## Logs
+
+Ranking actions are logged with the actor, target, old rank, new rank, action,
+reason, and timestamp where available.
+
+<Warning>
+  Lumira cannot rank users above the connected ranking account's Roblox group
+  permissions.
+</Warning>

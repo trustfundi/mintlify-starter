@@ -1,0 +1,29 @@
+---
+title: "Rate limits"
+description: "Understand Lumira API limits by plan."
+---
+
+## Core
+
+- 1 API key
+- 1,500 monthly calls
+- 150 rank actions per month
+- 30 requests per minute
+- 5 rank actions per minute
+
+## Pro
+
+- 5 API keys
+- 50,000 monthly calls
+- 250 rank requests
+- 60 rank actions per minute
+- API logs where enabled
+
+## Power
+
+Power features are currently not public-facing in the main pricing flow. Internal
+or test limits may differ by deployment.
+
+<Tip>
+  Always handle `429` responses and retry later instead of looping requests.
+</Tip>
