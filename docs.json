@@ -184,24 +184,23 @@
       {
         "header": "Product",
         "items": [
-          { "label": "Portal", "url": "https://canary-portal.lumiraranking.co.uk/login" },
-          { "label": "Pricing", "url": "https://lumiraranking.co.uk/pricing" },
-          { "label": "Changelog", "url": "https://lumiraranking.co.uk" }
+          { "label": "Portal", "href": "https://canary-portal.lumiraranking.co.uk/login" },
+          { "label": "Pricing", "href": "https://lumiraranking.co.uk/pricing" },
+          { "label": "Documentation", "href": "https://docs.lumiraranking.co.uk" }
         ]
       },
       {
         "header": "Support",
         "items": [
-          { "label": "Documentation", "url": "https://docs.lumiraranking.co.uk" },
-          { "label": "Discord", "url": "https://discord.gg/lumiraranking" },
-          { "label": "Support Pin", "url": "/support/support-pin" }
+          { "label": "Discord", "href": "https://discord.gg/lumiraranking" },
+          { "label": "Support Pin", "href": "/support/support-pin" }
         ]
       },
       {
         "header": "Legal",
         "items": [
-          { "label": "Terms of Service", "url": "https://lumiraranking.co.uk/terms" },
-          { "label": "Privacy Policy", "url": "https://lumiraranking.co.uk/privacy" }
+          { "label": "Terms of Service", "href": "https://lumiraranking.co.uk/terms" },
+          { "label": "Privacy Policy", "href": "https://lumiraranking.co.uk/privacy" }
         ]
       }
     ]
